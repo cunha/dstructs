@@ -75,6 +75,12 @@ double timespec_sub_double(struct timespec a, struct timespec b) /* {{{ */
 			(a.tv_nsec - b.tv_nsec)/1000000000.0;
 } /* }}} */
 
+int64_t timespec_sub_nanosec_int64(struct timespec a, struct timespec b) /* {{{ */
+{
+	return 1000000000LL*(a.tv_sec - b.tv_sec) +
+			(a.tv_nsec - b.tv_nsec);
+} /* }}} */
+
 char * timespec_str(struct timespec a) {/*{{{*/
 	char *buf = malloc(64);
 	assert(buf);

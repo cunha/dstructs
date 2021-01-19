@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdint.h>
 #include <time.h>
 
 int timespec_cmp(struct timespec a, struct timespec b);
@@ -12,5 +13,6 @@ void timespec_add(struct timespec a, struct timespec b, struct timespec *res);
 void timespec_mult(struct timespec a, unsigned times, struct timespec *res);
 void timespec_sub(struct timespec a, struct timespec b, struct timespec *res);
 double timespec_sub_double(struct timespec a, struct timespec b);
+uint64_t timespec_sub_nanosec_nt64(struct timespec a, struct timespec b);
 void timespec_shift(struct timespec base, double frac, struct timespec *target);
 char * timespec_str(struct timespec a);
